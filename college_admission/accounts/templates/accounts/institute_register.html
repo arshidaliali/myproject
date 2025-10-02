@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Institute Register{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 500px;">
+  <div class="card shadow">
+    <div class="card-body">
+      <h2 class="card-title mb-4 text-center">Institute Register</h2>
+
+      <form method="post">
+        {% csrf_token %}
+        <!-- Render form fields -->
+        {{ form.as_p }}
+        
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-success w-100">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

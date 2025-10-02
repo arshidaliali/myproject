@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Institutes and Their Courses</h2>
+{% for institute, courses in institutes.items %}
+  <h3>{{ institute.name }}</h3>
+  <ul>
+    {% for oc in courses %}
+      <li>{{ oc.course.name }} — <a href="{% url 'student_apply' oc.pk %}">Apply</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+{% endblock %}
